@@ -1,0 +1,157 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "initialCols": 120,
+    "initialRows": 40,
+    "centerOnLaunch": true,
+    "disabledProfileSources": [
+        "Windows.Terminal.Azure"
+    ],
+    "copyFormatting": "all",
+    "multiLinePasteWarning": false,
+    "useAcrylicInTabRow": true,
+    "schemes": [
+        {
+            "name": "VSCode Dark+",
+            "foreground": "#cccccc",
+            "background": "#252526",
+            "selectionBackground": "#264f78",
+            "cursorColor": "#cccccc",
+            "black": "#000000",
+            "red": "#cd3131",
+            "green": "#0dbc79",
+            "yellow": "#e5e510",
+            "blue": "#2472c8",
+            "purple": "#bc3fbc",
+            "cyan": "#11a8cd",
+            "white": "#e5e5e5",
+            "brightBlack": "#666666",
+            "brightRed": "#f14c4c",
+            "brightGreen": "#23d18b",
+            "brightYellow": "#f5f543",
+            "brightBlue": "#3b8eea",
+            "brightPurple": "#d670d6",
+            "brightCyan": "#29b8db",
+            "brightWhite": "#e5e5e5"
+        },
+        {
+            "name": "VSCode Dark+ (OLED)",
+            "foreground": "#cccccc",
+            "background": "#000000",
+            "selectionBackground": "#264f78",
+            "cursorColor": "#cccccc",
+            "black": "#000000",
+            "red": "#cd3131",
+            "green": "#0dbc79",
+            "yellow": "#e5e510",
+            "blue": "#2472c8",
+            "purple": "#bc3fbc",
+            "cyan": "#11a8cd",
+            "white": "#e5e5e5",
+            "brightBlack": "#666666",
+            "brightRed": "#f14c4c",
+            "brightGreen": "#23d18b",
+            "brightYellow": "#f5f543",
+            "brightBlue": "#3b8eea",
+            "brightPurple": "#d670d6",
+            "brightCyan": "#29b8db",
+            "brightWhite": "#e5e5e5"
+        },
+        {
+            "name": "VSCode Light+",
+            "foreground": "#333333",
+            "background": "#f3f3f3",
+            "selectionBackground": "#add6ff",
+            "cursorColor": "#333333",
+            "black": "#000000",
+            "red": "#cd3131",
+            "green": "#00bc00",
+            "yellow": "#949800",
+            "blue": "#0451a5",
+            "purple": "#bc05bc",
+            "cyan": "#0598bc",
+            "white": "#555555",
+            "brightBlack": "#666666",
+            "brightRed": "#cd3131",
+            "brightGreen": "#14ce14",
+            "brightYellow": "#b5ba00",
+            "brightBlue": "#0451a5",
+            "brightPurple": "#bc05bc",
+            "brightCyan": "#0598bc",
+            "brightWhite": "#a5a5a5"
+        }
+    ],
+    "profiles": {
+        "defaults": {
+            "colorScheme": "VSCode Dark+ (OLED)",
+            "font": {
+                "face": "Sarasa Term TC",
+                "size": 10,
+                "features": {
+                    "cv10": 6,
+                    "cv31": 16,
+                    "cv35": 6,
+                    "cv42": 10,
+                    "cv44": 2,
+                    "cv49": 2,
+                    "cv72": 3,
+                    "cv77": 2,
+                    "cv80": 2,
+                    "cv82": 6,
+                    "cv88": 2,
+                    "cv93": 3
+                }
+            },
+            "cursorShape": "bar",
+            "opacity": 85,
+            "useAcrylic": true,
+            "padding": "4, 4, 4, 4",
+            "antialiasingMode": "cleartype",
+            "historySize": 2147483647,
+            "bellStyle": [
+                "window",
+                "taskbar"
+            ]
+        },
+        "list": [
+            {
+                "name": "PowerShell",
+                "commandline": "pwsh -NoLogo",
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "name": "Windows PowerShell",
+                "hidden": true,
+                "commandline": "powershell -NoLogo",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}"
+            },
+            {
+                "name": "Command Prompt",
+                "commandline": "cmd /k %USERPROFILE%\\.cmdrc.bat",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}"
+            },
+            {
+                "name": "WSL",
+                "hidden": true,
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "name": "Ubuntu (WSL)",
+                "commandline": "wsl -d Ubuntu",
+                "startingDirectory": "~",
+                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+            },
+            {
+                "name": "Git Bash",
+                "commandline": "%PROGRAMFILES%\\Git\\bin\\bash.exe -il",
+                "startingDirectory": "%USERPROFILE%",
+                "icon": "%PROGRAMFILES%\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+                "guid": "{d15b228a-05d7-50d1-8472-f60aaba86efc}"
+            }
+        ]
+    }
+}
