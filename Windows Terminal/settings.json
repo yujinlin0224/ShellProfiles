@@ -107,6 +107,7 @@
             "opacity": 85,
             "useAcrylic": true,
             "padding": "4, 4, 4, 4",
+            "tabColor": "#000000",
             "antialiasingMode": "cleartype",
             "historySize": 2147483647,
             "bellStyle": [
