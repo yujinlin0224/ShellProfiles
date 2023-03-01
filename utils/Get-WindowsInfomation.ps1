@@ -1,11 +1,11 @@
-$windowsInfomationProperty = Get-CimInstance -ClassName Win32_OperatingSystem
-$windowsVersionProperty = Get-ItemProperty 'HKLM:\Software\Microsoft\Windows NT\CurrentVersion'
+$WindowsInfomationProperty = Get-CimInstance -ClassName Win32_OperatingSystem
+$WindowsVersionProperty = Get-ItemProperty 'HKLM:\Software\Microsoft\Windows NT\CurrentVersion'
 
-$windowsInfomation = '{0} {1} {2} ({3}.{4})' -f `
-    $windowsInfomationProperty.Caption, `
-    $windowsVersionProperty.DisplayVersion, `
-    $windowsInfomationProperty.OSArchitecture.Replace(' ', ''), `
-    $windowsInfomationProperty.Version, `
-    $windowsVersionProperty.UBR
+$WindowsInfomation = '{0} {1} {2} ({3}.{4})' -f `
+    $WindowsInfomationProperty.Caption, `
+    $WindowsVersionProperty.DisplayVersion, `
+    $WindowsInfomationProperty.OSArchitecture.Replace(' ', ''), `
+    $WindowsInfomationProperty.Version, `
+    $WindowsVersionProperty.UBR
 
-Write-Output $windowsInfomation
+Write-Output $WindowsInfomation

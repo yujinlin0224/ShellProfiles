@@ -130,7 +130,7 @@
             },
             {
                 "name": "Command Prompt",
-                "commandline": "cmd /k %USERPROFILE%\\.cmdrc.bat",
+                "commandline": "cmd /k %UserProfile%\\.cmdrc.bat",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}"
             },
             {
@@ -148,9 +148,9 @@
             },
             {
                 "name": "Git Bash",
-                "commandline": "%PROGRAMFILES%\\Git\\bin\\bash.exe -il",
-                "startingDirectory": "%USERPROFILE%",
-                "icon": "%PROGRAMFILES%\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+                "commandline": "%ProgramFiles%\\Git\\bin\\bash.exe -il",
+                "startingDirectory": "%UserProfile%",
+                "icon": "%ProgramFiles%\\Git\\mingw64\\share\\git\\git-for-windows.ico",
                 "guid": "{d15b228a-05d7-50d1-8472-f60aaba86efc}"
             }
         ]

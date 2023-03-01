@@ -12,57 +12,59 @@
 (Get-Host).PrivateData.ProgressBackgroundColor = [System.ConsoleColor]::Black
 
 Set-PSReadLineOption -Colors @{
-    'Error' = [System.ConsoleColor]::Red
-    'Default' = [System.ConsoleColor]::White
-    'Comment' = [System.ConsoleColor]::DarkGreen
-    'Keyword' = [System.ConsoleColor]::DarkMagenta
-    'String' = [System.ConsoleColor]:: Blue
-    'Operator' = [System.ConsoleColor]::Gray
-    'Variable' = [System.ConsoleColor]::Cyan
-    'Command' = [System.ConsoleColor]::Green
-    'Parameter' = [System.ConsoleColor]::DarkGray
-    'Type' = [System.ConsoleColor]::DarkBlue
-    'Number' = [System.ConsoleColor]::Magenta
-    'Member' = [System.ConsoleColor]::Yellow
+    "Error"     = [System.ConsoleColor]::Red
+    "Default"   = [System.ConsoleColor]::White
+    "Comment"   = [System.ConsoleColor]::DarkGreen
+    "Keyword"   = [System.ConsoleColor]::DarkMagenta
+    "String"    = [System.ConsoleColor]::Blue
+    "Operator"  = [System.ConsoleColor]::Gray
+    "Variable"  = [System.ConsoleColor]::Cyan
+    "Command"   = [System.ConsoleColor]::Yellow
+    "Parameter" = [System.ConsoleColor]::DarkCyan
+    "Type"      = [System.ConsoleColor]::DarkBlue
+    "Number"    = [System.ConsoleColor]::Magenta
+    "Member"    = [System.ConsoleColor]::DarkYellow
 }
 
 function Prompt {
-    $currentPath = $ExecutionContext.SessionState.Path.CurrentLocation.Path
-    $relativePath = [System.IO.Path]::GetRelativePath($HOME, $currentPath)
-    if ($relativePath -eq '.') {
-        $path = '~'
-    } elseif ($currentPath.IndexOf($HOME) -eq 0) {
-        $path = Join-Path '~' $relativePath
-    } else {
-        $path = $currentPath
+    $CurrentPath = $ExecutionContext.SessionState.Path.CurrentLocation.Path
+    $RelativePath = [System.IO.Path]::GetRelativePath($Home, $CurrentPath)
+    if ($RelativePath -eq ".") {
+        $Path = "~"
     }
-    if ($path.EndsWith('\')) {
-        $path = $path.TrimEnd('\')
+    elseif ($CurrentPath.IndexOf($Home) -eq 0) {
+        $Path = Join-Path "~" $RelativePath
     }
-    if ($path.IndexOf('Microsoft.PowerShell.Core\FileSystem::') -eq 0) {
-        $path = $path.Remove(0, 'Microsoft.PowerShell.Core\FileSystem::'.Length)
+    else {
+        $Path = $CurrentPath
     }
-    $authority = "$($env:UserName)@$([System.Net.Dns]::GetHostName())"
-    $host.UI.RawUI.WindowTitle = "$($authority):$($path) - PowerShell"
-    Write-Host $authority -NoNewLine -ForegroundColor 'DarkCyan'
-    Write-Host ':' -NoNewLine
-    Write-Host $path -ForegroundColor 'DarkYellow'
-    return "$('>' * ($NestedPromptLevel + 1)) "
+    if ($Path.EndsWith("\")) {
+        $Path = $Path.TrimEnd("\")
+    }
+    if ($Path.IndexOf("Microsoft.PowerShell.Core\FileSystem::") -eq 0) {
+        $Path = $Path.Remove(0, "Microsoft.PowerShell.Core\FileSystem::".Length)
+    }
+    $Authority = "$($Env:UserName)@$([System.Net.Dns]::GetHostName())"
+    $host.UI.RawUI.WindowTitle = "$($Authority):$($Path) - PowerShell"
+    Write-Host $Authority -NoNewLine -ForegroundColor Green
+    Write-Host ":" -NoNewLine -ForegroundColor DarkGray
+    Write-Host $Path
+    return "$(">" * ($NestedPromptLevel + 1)) "
 }
 
 & {
-    $windowsInfomation = & '~\Get-WindowsInfomation.ps1'
-    $infomation = "PowerShell $($PSVersionTable.PSVersion) [$($windowsInfomation)]"
-    $copyright = 'Copyright © Microsoft Corporation. All rights reserved.'
+    $WindowsInfomation = & "~\Get-WindowsInfomation.ps1"
+    $Infomation = "PowerShell $($PSVersionTable.PSVersion) [$($WindowsInfomation)]"
+    $Copyright = "Copyright © Microsoft Corporation. All rights reserved."
 
     chcp 65001 | Out-Null
 
-    Write-Host $infomation -ForegroundColor 'Cyan'
-    Write-Host $copyright
+    Write-Host $Infomation -ForegroundColor Green
+    Write-Host $Copyright -ForegroundColor DarkGray
     Write-Host
 }
 
-if (Test-Path '~\miniconda3' -PathType 'Container') {
-    & '~\miniconda3\shell\condabin\conda-hook.ps1'
+if (Test-Path "~\miniconda3" -PathType "Container") {
+    & "~\miniconda3\shell\condabin\conda-hook.ps1"
     conda activate base
 }
