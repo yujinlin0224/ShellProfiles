@@ -10,35 +10,30 @@
     ],
     "copyFormatting": "all",
     "multiLinePasteWarning": false,
-    "useAcrylicInTabRow": true,
+    // "useAcrylicInTabRow": true,
+    "theme": "Dark with Mica",
+    "themes": [
+        {
+            "name": "Dark with Mica",
+            "window": {
+                "applicationTheme": "dark",
+                "useMica": true
+            },
+            "tab": {
+                "background": "#25252680",
+                "unfocusedBackground": "#00000000"
+            },
+            "tabRow": {
+                "background": "#00000000",
+                "unfocusedBackground": "#00000000"
+            }
+        }
+    ],
     "schemes": [
         {
             "name": "VSCode Dark+",
             "foreground": "#cccccc",
             "background": "#252526",
-            "selectionBackground": "#264f78",
-            "cursorColor": "#cccccc",
-            "black": "#000000",
-            "red": "#cd3131",
-            "green": "#0dbc79",
-            "yellow": "#e5e510",
-            "blue": "#2472c8",
-            "purple": "#bc3fbc",
-            "cyan": "#11a8cd",
-            "white": "#e5e5e5",
-            "brightBlack": "#666666",
-            "brightRed": "#f14c4c",
-            "brightGreen": "#23d18b",
-            "brightYellow": "#f5f543",
-            "brightBlue": "#3b8eea",
-            "brightPurple": "#d670d6",
-            "brightCyan": "#29b8db",
-            "brightWhite": "#e5e5e5"
-        },
-        {
-            "name": "VSCode Dark+ (OLED)",
-            "foreground": "#cccccc",
-            "background": "#000000",
             "selectionBackground": "#264f78",
             "cursorColor": "#cccccc",
             "black": "#000000",
@@ -84,7 +79,7 @@
     ],
     "profiles": {
         "defaults": {
-            "colorScheme": "VSCode Dark+ (OLED)",
+            "colorScheme": "VSCode Dark+",
             "font": {
                 "face": "Sarasa Term TC",
                 "size": 10,
@@ -104,10 +99,10 @@
                 }
             },
             "cursorShape": "bar",
-            "opacity": 85,
-            "useAcrylic": true,
+            "opacity": 50, // 85
+            // "useAcrylic": true,
             "padding": "4, 4, 4, 4",
-            "tabColor": "#000000",
+            // "tabColor": "#000000",
             "antialiasingMode": "cleartype",
             "historySize": 2147483647,
             "bellStyle": [
