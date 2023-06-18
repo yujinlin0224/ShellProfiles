@@ -2,6 +2,7 @@
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "windowingBehavior": "useExisting",
     "initialCols": 120,
     "initialRows": 40,
     "centerOnLaunch": true,
@@ -9,18 +10,18 @@
         "Windows.Terminal.Azure"
     ],
     "copyFormatting": "all",
+    "largePasteWarning": false,
     "multiLinePasteWarning": false,
-    // "useAcrylicInTabRow": true,
-    "theme": "Dark with Mica",
+    "theme": "Mica",
     "themes": [
         {
-            "name": "Dark with Mica",
+            "name": "Mica",
             "window": {
-                "applicationTheme": "dark",
+                "applicationTheme": "system",
                 "useMica": true
             },
             "tab": {
-                "background": "#25252680",
+                "background": "#000000b3",
                 "unfocusedBackground": "#00000000"
             },
             "tabRow": {
@@ -99,16 +100,21 @@
                 }
             },
             "cursorShape": "bar",
-            "opacity": 50, // 85
-            // "useAcrylic": true,
-            "padding": "4, 4, 4, 4",
-            // "tabColor": "#000000",
+            "opacity": 70,
+            "padding": "6, 6, 6, 6",
+            "background": "#000000",
+            "unfocusedAppearance": {
+                "background": "#202020",
+            },
             "antialiasingMode": "cleartype",
-            "historySize": 2147483647,
+            "historySize": 32767,
             "bellStyle": [
                 "window",
                 "taskbar"
-            ]
+            ],
+            "experimental.autoMarkPrompts": true,
+            "experimental.showMarksOnScrollbar": true,
+            "experimental.rightClickContextMenu": true,
         },
         "list": [
             {
@@ -129,6 +135,13 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}"
             },
             {
+                "name": "Git Bash",
+                "commandline": "%ProgramFiles%\\Git\\bin\\bash.exe -il",
+                "startingDirectory": "%UserProfile%",
+                "icon": "%ProgramFiles%\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+                "guid": "{d15b228a-05d7-50d1-8472-f60aaba86efc}"
+            },
+            {
                 "name": "WSL",
                 "hidden": true,
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
@@ -140,13 +153,6 @@
                 "startingDirectory": "~",
                 "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
                 "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
-            },
-            {
-                "name": "Git Bash",
-                "commandline": "%ProgramFiles%\\Git\\bin\\bash.exe -il",
-                "startingDirectory": "%UserProfile%",
-                "icon": "%ProgramFiles%\\Git\\mingw64\\share\\git\\git-for-windows.ico",
-                "guid": "{d15b228a-05d7-50d1-8472-f60aaba86efc}"
             }
         ]
     }
