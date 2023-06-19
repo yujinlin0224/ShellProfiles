@@ -4,7 +4,7 @@
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "windowingBehavior": "useExisting",
     "initialCols": 120,
-    "initialRows": 40,
+    "initialRows": 36,
     "centerOnLaunch": true,
     "disabledProfileSources": [
         "Windows.Terminal.Azure"
@@ -21,7 +21,7 @@
                 "useMica": true
             },
             "tab": {
-                "background": "#000000b3",
+                "background": "#00000040",
                 "unfocusedBackground": "#00000000"
             },
             "tabRow": {
@@ -83,25 +83,11 @@
             "colorScheme": "VSCode Dark+",
             "font": {
                 "face": "Sarasa Term TC",
-                "size": 10,
-                "features": {
-                    "cv10": 6,
-                    "cv31": 16,
-                    "cv35": 6,
-                    "cv42": 10,
-                    "cv44": 2,
-                    "cv49": 2,
-                    "cv72": 3,
-                    "cv77": 2,
-                    "cv80": 2,
-                    "cv82": 6,
-                    "cv88": 2,
-                    "cv93": 3
-                }
+                "size": 10
             },
             "cursorShape": "bar",
-            "opacity": 70,
-            "padding": "6, 6, 6, 6",
+            "opacity": 25,
+            "padding": "6, 6, 0, 6",
             "background": "#000000",
             "unfocusedAppearance": {
                 "background": "#202020",
